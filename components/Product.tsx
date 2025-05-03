@@ -1,4 +1,4 @@
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 
 type ProductProps = {
   data: {
@@ -11,7 +11,13 @@ type ProductProps = {
 
 export default function Product({ data }: ProductProps) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        Alert.alert("Adicionado ao carrinho", `Você adicionou "${data.name.trim()}" ao carrinho`);
+
+      }}
+    >
       <View style={styles.imageContainer}>
         <Image source={{ uri: data.image?.url }} style={styles.image} />
       </View>
@@ -21,7 +27,7 @@ export default function Product({ data }: ProductProps) {
           <Text style={styles.price}>R$ {data.price}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -65,13 +71,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
     textAlign: "center",
-    fontFamily: "poppins"
+    fontFamily: "poppins",
   },
   price: {
     fontSize: 12,
     color: "#888",
     marginTop: 5,
-    fontFamily: "poppins"
+    fontFamily: "poppins",
   },
 });
+
 
