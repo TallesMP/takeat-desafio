@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 export default function BillButton() {
   return (
     <TouchableOpacity style={styles.button}>
-      <Image source={require("@/assets/images/fork_knife.svg")} style={styles.icon} />
+      <Image source={require("@/assets/images/fork_knife.png")} style={styles.icon} />
       <Text style={styles.text}>Conta</Text>
     </TouchableOpacity>
   );

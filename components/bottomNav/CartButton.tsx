@@ -2,7 +2,7 @@ import { Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 export default function CartButton() {
   return (
     <TouchableOpacity style={styles.button}>
-      <Image source={require("@/assets/images/takeat_icon.svg")} style={styles.icon} />
+      <Image source={require("@/assets/images/takeat_icon.png")} style={styles.icon} />
       <Text style={styles.text}>Carrinho</Text>
     </TouchableOpacity>
   );

@@ -3,7 +3,7 @@ import { Image, Text, View, StyleSheet } from "react-native";
 export default function TableIndicator({ table }: { table: number }) {
   return (
     <View style={styles.row}>
-      <Image source={require("@/assets/images/indicator.svg")} style={styles.icon} />
+      <Image source={require("@/assets/images/indicator.png")} style={styles.icon} />
       <Text style={styles.text}>mesa {table}</Text>
     </View>
   );
