@@ -1,4 +1,3 @@
-import { useCart } from "@/contexts/CartContext";
 import { View, Image, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 
 type ProductProps = {
@@ -11,12 +10,10 @@ type ProductProps = {
 };
 
 export default function Product({ data }: ProductProps) {
-  const { addToCart } = useCart()
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        addToCart({ id: data.id, name: data.name, price: Number(data.price) })
         Alert.alert("Adicionado ao carrinho", `Você adicionou "${data.name.trim()}" ao carrinho`);
 
       }}
