@@ -1,4 +1,5 @@
 import { View, Image, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import { useCart } from "@/contexts/CartContext";
 
 type ProductProps = {
   data: {
@@ -10,13 +11,23 @@ type ProductProps = {
 };
 
 export default function Product({ data }: ProductProps) {
+  const { addToCart } = useCart();
+
+  function handleAddToCart() {
+    addToCart({
+      id: data.id,
+      name: data.name,
+      price: Number(data.price),
+      image: data.image
+    });
+
+    Alert.alert("Adicionado ao carrinho", `Você adicionou "${data.name.trim()}" ao carrinho`);
+  }
+
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => {
-        Alert.alert("Adicionado ao carrinho", `Você adicionou "${data.name.trim()}" ao carrinho`);
-
-      }}
+      onPress={handleAddToCart}
     >
       <View style={styles.imageContainer}>
         <Image source={{ uri: data.image?.url }} style={styles.image} />
@@ -80,5 +91,4 @@ const styles = StyleSheet.create({
     fontFamily: "poppins",
   },
 });
-
 
