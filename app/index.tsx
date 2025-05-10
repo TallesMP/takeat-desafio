@@ -1,22 +1,5 @@
-import { CartProvider } from "@/contexts/CartContext";
-import CartScreen from "@/screens/CartScreen";
-import MenuScreen from "@/screens/MenuScreen";
-import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
-import { Roboto_400Regular } from '@expo-google-fonts/roboto'
-export default function Index() {
-  const [fontsLoaded] = useFonts({
-    poppins: Poppins_400Regular,
-    roboto: Roboto_400Regular
-  });
+import MenuScreen from '@/screens/MenuScreen';
 
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  return (
-    <CartProvider>
-      <MenuScreen />
-      <CartScreen />
-    </CartProvider>
-  );
+export default function Home() {
+  return <MenuScreen />;
 }

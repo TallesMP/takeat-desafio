@@ -1,9 +1,10 @@
+import { useRouter } from "expo-router";
 import { Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function GoBackButton({ text, page }: { text: string, page: string }) {
+  const router = useRouter()
   return (
-    // Implementar nagvegação depois
-    <TouchableOpacity onPress={() => { }} style={styles.row}>
+    <TouchableOpacity onPress={() => { router.push(`/${page}`) }} style={styles.row}>
       <Image source={require("@/assets/images/go_back_arrow.png")} style={styles.icon} />
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>

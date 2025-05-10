@@ -1,8 +1,11 @@
-import { Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { useRouter } from 'expo-router';
+import { Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+
 export default function CartButton() {
+  const router = useRouter()
   return (
-    <TouchableOpacity style={styles.button}>
-      <Image source={require("@/assets/images/takeat_icon.png")} style={styles.icon} />
+    <TouchableOpacity onPress={() => { router.push('/cart') }} style={styles.button}>
+      <Image source={require('@/assets/images/takeat_icon.png')} style={styles.icon} />
       <Text style={styles.text}>Carrinho</Text>
     </TouchableOpacity>
   );
@@ -10,7 +13,7 @@ export default function CartButton() {
 
 const styles = StyleSheet.create({
   button: {
-    width: "67%", //240
+    width: "67%",
     height: 40,
     flexDirection: "row",
     alignItems: "center",
@@ -18,6 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF2C3A",
     padding: 10,
     borderRadius: 18,
+    alignSelf: 'center',
   },
   icon: {
     width: 22,
@@ -28,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#fff",
-    fontFamily: "poppins"
+    fontFamily: "poppins",
   },
 });
 

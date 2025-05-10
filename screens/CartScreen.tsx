@@ -15,7 +15,7 @@ export default function CartScreen() {
         <TableIndicator table={1} />
         <GoBackButton
           text="Continuar comprando"
-          page="/"
+          page=""
         />
       </View>
       <Text style={styles.title}>Itens</Text>
