@@ -4,7 +4,8 @@ import GoBackButton from "@/components/GoBackButton";
 import TableIndicator from "@/components/TableIndicator";
 import api from "@/services/api";
 import { useEffect, useState } from "react";
-import { Text, StyleSheet, ScrollView, View, SafeAreaView } from "react-native"
+import { Text, StyleSheet, ScrollView, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function MenuScreen() {
   const restaurantId = 2
@@ -27,7 +28,7 @@ export default function MenuScreen() {
   }, [restaurantId])
 
   return (
-    <SafeAreaView style={styles.body}>
+    <SafeAreaView style={styles.body} edges={['top', "bottom"]}>
       <View style={styles.header}>
         <View style={styles.headerTop}>
           <Text style={styles.title}>{restaurantName}</Text>

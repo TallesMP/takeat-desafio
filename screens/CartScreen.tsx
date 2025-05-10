@@ -5,33 +5,33 @@ import TableIndicator from "@/components/TableIndicator";
 import GoBackButton from "@/components/GoBackButton";
 import OrderButton from "@/components/OrderButton";
 import ClearCartButton from "@/components/ClearCartButton";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function CartScreen() {
   const { itemList } = useCart();
 
   return (
-    <>    <View style={styles.container}>
-      <View style={styles.header}>
-        <TableIndicator table={1} />
-        <GoBackButton
-          text="Continuar comprando"
-          page=""
+
+    <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TableIndicator table={1} />
+          <GoBackButton text="Continuar comprando" page="" />
+        </View>
+        <Text style={styles.title}>Itens</Text>
+        <FlatList
+          data={itemList}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <CartItem item={item} />}
         />
       </View>
-      <Text style={styles.title}>Itens</Text>
-      <FlatList
-        data={itemList}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <CartItem item={item} />}
-      />
-
-    </View>
-      <View style={styles.footer}>
-        <OrderButton />
-        <ClearCartButton />
-      </View>
-    </>
-
+      <SafeAreaView edges={['bottom']}>
+        <View style={styles.footer}>
+          <OrderButton />
+          <ClearCartButton />
+        </View>
+      </SafeAreaView>
+    </SafeAreaView>
   );
 }
 
