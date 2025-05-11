@@ -44,6 +44,10 @@ export default function MenuScreen() {
               key={category.id}
               name={category.name}
               banner={category.image?.url}
+              preparation_time={category.preparation_time}
+              active_days={category.active_days}
+              start_time={category.start_time}
+              end_time={category.end_time}
               products={category.products}
             />
           ))
