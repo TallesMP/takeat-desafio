@@ -29,7 +29,7 @@ export default function SearchBar({ categories, onFilter }: { categories: any[],
 
     onFilter(filtered)
 
-  }, [searchText, categories, onFilter])
+  }, [searchText])
 
   return (
     <View style={styles.container}>
