@@ -38,12 +38,6 @@ npx expo export:web
 Para criar uma build Android (APK ou AAB), execute:
 
 ```bash
-npx expo build:android
-```
-
-Ou, se estiver usando o novo EAS Build:
-
-```bash
 npx eas build -p android
 ```
 
