@@ -70,6 +70,7 @@ export default function MenuScreen() {
 
 const styles = StyleSheet.create({
   header: {
+    backgroundColor: "#fff",
     padding: 10,
     paddingHorizontal: 22,
   },
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   container: {
+    backgroundColor: "#fff",
     flexGrow: 1,
     alignItems: 'center',
   },

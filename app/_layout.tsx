@@ -2,7 +2,7 @@ import { Slot } from 'expo-router';
 import { CartProvider } from '@/contexts/CartContext';
 import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import { Roboto_400Regular } from '@expo-google-fonts/roboto';
-import { LogBox } from 'react-native';
+import { LogBox, Appearance } from 'react-native';
 
 export default function Layout() {
   LogBox.ignoreAllLogs();
@@ -11,8 +11,10 @@ export default function Layout() {
     roboto: Roboto_400Regular,
   });
 
+  Appearance.setColorScheme('light')
+
   if (!fontsLoaded) {
-    return null
+    console.log("Fontes não carregadas")
   }
 
   return (

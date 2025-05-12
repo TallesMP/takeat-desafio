@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   footer: {
+    backgroundColor: "#fff",
     borderTopWidth: 1,
     borderColor: '#EDEDED',
     flexDirection: 'row',

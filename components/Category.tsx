@@ -55,7 +55,11 @@ export default function Category({
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
-        <Image source={{ uri: banner }} style={styles.image} />
+        <Image
+          source={banner ? { uri: banner } : require("@/assets/images/default_category_image.png")}
+          style={styles.image}
+          resizeMode="cover"
+        />
         <LinearGradient
           colors={['rgba(0,0,0,0.7)', 'transparent']}
           start={{ x: 0, y: 0 }}
@@ -96,7 +100,8 @@ const styles = StyleSheet.create({
   image: {
     height: 70,
     borderRadius: 30,
-    backgroundColor: "#979797"
+    backgroundColor: "#979797",
+    width: "100%",
   },
   titleContainer: {
     position: "absolute",
